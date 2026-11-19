@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=12">
+  <link rel="stylesheet" href="./styles.css?v=13">
 </head>
 
 <body>
@@ -31,9 +31,9 @@
     <a class="brand" href="#">ma <small>Máximo Argañarás</small></a>
     <nav class="nav" aria-label="Principal">
       <a href="#servicios" data-i18n="navServices">Servicios</a>
+      <a href="#planes" data-i18n="navPlans">Planes</a>
       <a href="#invitaciones" data-i18n="navInvites">Invitaciones</a>
       <a href="#proyectos" data-i18n="navWork">Proyectos</a>
-      <a href="#proceso" data-i18n="navProcess">Proceso</a>
     </nav>
     <div class="top-actions">
       <button type="button" class="lang" id="lang-toggle" aria-label="Switch to English">EN</button>
@@ -65,7 +65,7 @@
 
     <div class="hero-foot">
       <img class="hero-face" src="./Imagenes/web/about-me.webp" alt="Máximo Argañarás" width="72" height="72">
-      <p class="hero-lead" data-i18n="heroLead">Soy Máximo. Hago sitios web, tiendas online e invitaciones digitales que se ven profesionales, cargan rápido y se entienden al instante.</p>
+      <p class="hero-lead" data-i18n="heroLead">Soy Máximo. Hago sitios web, tiendas online e invitaciones digitales, y los acompaño después de publicar para que sigan funcionando y vendiendo.</p>
       <div class="hero-ctas">
         <a class="btn btn--solid js-wpp" data-wpp="general" href="#" target="_blank" rel="noopener"><span data-i18n="ctaWpp">Escribime por WhatsApp</span> <span class="arr">→</span></a>
         <a class="btn btn--ghost" href="#proyectos" data-i18n="ctaWork">Ver proyectos</a>
@@ -115,12 +115,62 @@
         <p data-i18n="sv3p">Casamientos, quinces y cumpleaños, con confirmación online</p>
         <span class="svc-arr" aria-hidden="true">→</span>
       </a>
-      <a class="svc js-pick" href="#contacto" data-pick="other">
+      <a class="svc" href="#planes">
         <sup class="svc-n">05</sup>
-        <h3 data-i18n="sv4t">Mantenimiento</h3>
-        <p data-i18n="sv4p">Actualizaciones, copias de seguridad y cambios cuando los necesitás</p>
+        <h3 data-i18n="sv4t">Acompañamiento mensual</h3>
+        <p data-i18n="sv4p">Medimos y mejoramos tu web cada mes, como socios</p>
         <span class="svc-arr" aria-hidden="true">→</span>
       </a>
+    </div>
+  </section>
+
+  <!-- PLANES -->
+  <section class="section container" id="planes">
+    <div class="section-head reveal">
+      <span class="mono" data-i18n="plLabel">(02) Acompañamiento</span>
+      <div>
+        <h2 class="h2" data-i18n="plTitle">No entrego una web <em>y me olvido.</em></h2>
+        <p class="plans-lead" data-i18n="plLead">Trabajo con cada cliente como socio: medimos cada mes, vemos qué funciona y lo mejoramos. Elegí cuánto querés delegar.</p>
+      </div>
+    </div>
+    <div class="plans reveal">
+        <article class="plan">
+          <span class="mono">01</span>
+          <h3 data-i18n="pl1">Gestión</h3>
+          <p class="plan-for" data-i18n="pl1f">Que tu web esté siempre al día</p>
+          <ul>
+            <li data-i18n="pl1a">Actualizaciones, seguridad y copias de seguridad</li>
+            <li data-i18n="pl1b">Cambios y carga de contenido o productos</li>
+            <li data-i18n="pl1c">Resumen mensual: visitas, consultas o ventas</li>
+            <li data-i18n="pl1d">Grupo de WhatsApp y lista de pendientes compartida</li>
+          </ul>
+        </article>
+        <article class="plan">
+          <span class="mono">02</span>
+          <h3 data-i18n="pl2">Crecimiento</h3>
+          <p class="plan-for" data-i18n="pl2f">Que la gente vuelva a comprar o a consultar</p>
+          <ul>
+            <li data-i18n="pl2a">Todo lo de Gestión</li>
+            <li data-i18n="pl2b">Newsletter y mensajes automáticos: bienvenida, carrito abandonado y reseñas</li>
+            <li data-i18n="pl2c">Informe mensual con lo que funcionó y qué cambiar</li>
+            <li data-i18n="pl2d">Charla semanal de 30 minutos</li>
+          </ul>
+        </article>
+        <article class="plan plan--featured">
+          <span class="mono">03</span>
+          <h3 data-i18n="pl3">Socio</h3>
+          <p class="plan-for" data-i18n="pl3f">Un plan comercial todo el año</p>
+          <ul>
+            <li data-i18n="pl3a">Todo lo de Crecimiento</li>
+            <li data-i18n="pl3b">Una mejora al mes pensada para vender más, según los datos</li>
+            <li data-i18n="pl3c">Calendario comercial de los próximos 3 meses</li>
+            <li data-i18n="pl3d">Respuesta en el día</li>
+          </ul>
+        </article>
+    </div>
+    <div class="plans-foot reveal">
+      <p data-i18n="plNote">Cada plan suma todo lo del anterior y se puede cambiar avisando antes de fin de mes. El valor depende de tu proyecto: te armo el plan después de una charla corta.</p>
+      <a class="btn btn--solid js-wpp" data-wpp="plan" href="#" target="_blank" rel="noopener"><span data-i18n="plCta">Consultar por un plan</span> <span class="arr">→</span></a>
     </div>
   </section>
 
@@ -128,7 +178,7 @@
   <section class="container" id="invitaciones">
     <div class="invites reveal">
       <div>
-        <span class="mono" data-i18n="invLabel">(02) Invitaciones digitales</span>
+        <span class="mono" data-i18n="invLabel">(03) Invitaciones digitales</span>
         <h2 class="h2" data-i18n="invTitle">¿Te llegó una invitación hecha por mí? <em>Hacé la tuya.</em></h2>
         <p class="invites-lead" data-i18n="invLead">Una invitación web para tu casamiento, quince o cumple, lista para mandar por WhatsApp.</p>
         <div class="invites-ctas">
@@ -148,7 +198,7 @@
   <!-- PROYECTOS -->
   <section class="section container" id="proyectos">
     <div class="section-head reveal">
-      <span class="mono" data-i18n="s3Label">(03) Proyectos</span>
+      <span class="mono" data-i18n="s3Label">(04) Proyectos</span>
       <h2 class="h2" data-i18n="s3Title">Algunas webs que diseñé y desarrollé.</h2>
     </div>
 
@@ -216,22 +266,27 @@
   <!-- PROCESO -->
   <section class="section container" id="proceso">
     <div class="section-head reveal">
-      <span class="mono" data-i18n="s4Label">(04) Cómo trabajo</span>
+      <span class="mono" data-i18n="s4Label">(05) Cómo trabajo</span>
       <h2 class="h2" data-i18n="s4Title">Simple, claro y viendo avances en vivo.</h2>
     </div>
     <div class="steps reveal">
       <div class="step"><span class="mono">01</span><h3 data-i18n="st1t">Charla</h3><p data-i18n="st1p">Entiendo tu negocio, qué necesitás y qué querés lograr con la web.</p></div>
       <div class="step"><span class="mono">02</span><h3 data-i18n="st2t">Diseño</h3><p data-i18n="st2p">Primero la estructura, después el color y los detalles. Lo ajustamos juntos.</p></div>
       <div class="step"><span class="mono">03</span><h3 data-i18n="st3t">Desarrollo</h3><p data-i18n="st3p">Armo cada pantalla con un link para que veas el avance en vivo.</p></div>
-      <div class="step"><span class="mono">04</span><h3 data-i18n="st4t">Lanzamiento</h3><p data-i18n="st4p">Publicamos, te enseño a usarla y sigo cerca para lo que necesites.</p></div>
+      <div class="step"><span class="mono">04</span><h3 data-i18n="st4t">Lanzamiento</h3><p data-i18n="st4p">Publicamos y te enseño a usarla.</p></div>
+      <div class="step"><span class="mono">05</span><h3 data-i18n="st5t">Seguimiento</h3><p data-i18n="st5p">Medimos cada mes y mejoramos lo que no funciona.</p></div>
     </div>
   </section>
 
   <!-- FAQ -->
   <section class="section container" id="faq" style="padding-top:0">
     <div class="faq-wrap reveal">
-      <span class="mono mute" data-i18n="s5Label">(05) Preguntas</span>
+      <span class="mono mute" data-i18n="s5Label">(06) Preguntas</span>
       <div class="faq">
+        <details>
+          <summary data-i18n="q0">¿Qué pasa después de publicar la web?</summary>
+          <p data-i18n="a0">Podés seguir por tu cuenta, o elegir un plan de acompañamiento para que la mantenga al día, mida cómo funciona y la mejore cada mes.</p>
+        </details>
         <details>
           <summary data-i18n="q1">¿Cuánto cuesta una web?</summary>
           <p data-i18n="a1">Depende de lo que necesites: no es lo mismo una página institucional que una tienda con cientos de productos. Después de una charla corta te paso un presupuesto cerrado, sin sorpresas.</p>
@@ -264,7 +319,7 @@
 <!-- CONTACTO -->
 <footer class="contact" id="contacto">
   <div class="container contact-inner">
-    <span class="mono" data-i18n="s6Label">(06) Contacto</span>
+    <span class="mono" data-i18n="s6Label">(07) Contacto</span>
     <h2 class="contact-title" data-i18n="cTitle">¿Arrancamos<em>?</em></h2>
 
     <div class="contact-grid">
@@ -294,6 +349,7 @@
             <option value="web" data-i18n="oWeb">Una página web</option>
             <option value="shop" data-i18n="oShop">Una tienda online</option>
             <option value="newsletter" data-i18n="oNews">Newsletter para mi tienda</option>
+            <option value="plan" data-i18n="oPlan">Un plan de acompañamiento</option>
             <option value="invite" data-i18n="oInvite">Una invitación digital</option>
             <option value="other" data-i18n="oOther">Otra cosa</option>
           </select>
@@ -335,10 +391,10 @@ var WORDS = {
 };
 
 var EN = {
-  navServices: 'Services', navInvites: 'Invitations', navWork: 'Work', navProcess: 'Process', navCta: "Let's talk",
+  navServices: 'Services', navInvites: 'Invitations', navWork: 'Work', navPlans: 'Plans', navCta: "Let's talk",
   metaRole: 'Web design & development',
   h1: 'I design websites for',
-  heroLead: "I'm Máximo. I make websites, online stores and digital invitations that look professional, load fast and are clear at a glance.",
+  heroLead: "I'm Máximo. I make websites, online stores and digital invitations, and I stay with you after launch so they keep working and selling.",
   ctaWpp: 'Message me on WhatsApp', ctaWork: 'See projects',
   chip: '♡ Came from an invitation? See how to get yours →',
   clients: 'Brands that trusted me',
@@ -346,10 +402,10 @@ var EN = {
   sv1t: 'Websites', sv1p: 'Look serious and get more inquiries.',
   sv2t: 'Online stores', sv2p: 'Catalog, payments, shipping and connected stock.',
   sv3t: 'Digital invitations', sv3p: 'Weddings and celebrations, with online RSVP.',
-  sv4t: 'Maintenance', sv4p: 'Updates, backups and changes whenever you need them.',
+  sv4t: 'Monthly partnership', sv4p: 'We measure and improve your site every month, as partners',
   sv5t: 'Newsletter', sv5p: 'For online stores: email campaigns that bring customers back',
   sticker: "LET'S TALK ✳ LET'S TALK ✳ LET'S TALK ✳ ", band: "Let's talk ✳ Message me on WhatsApp ✳", oNews: 'A newsletter for my store',
-  invLabel: '(02) Digital invitations',
+  invLabel: '(03) Digital invitations',
   invTitle: 'Got an invitation I made? <em>Get your own.</em>',
   invLead: 'A web invitation for your wedding or celebration, ready to share on WhatsApp.',
   invCta: 'I want my invitation', invCta2: 'Leave my details', invDemo: 'See a sample invitation ↗',
@@ -357,7 +413,7 @@ var EN = {
   inv2: 'A dashboard to see who is coming, with plus-ones and special menus',
   inv3: 'Map, schedule, dress code, gift registry and photos',
   inv4: 'Looks great on any phone and shares with a single link',
-  s3Label: '(03) Work', s3Title: 'Some websites I designed and built.',
+  s3Label: '(04) Work', s3Title: 'Some websites I designed and built.',
   pUtil: 'Wholesale store: retailer sign-up, members-only prices and WhatsApp orders.',
   pRevivete: 'Online store and blog for a matcha brand.',
   pBiozen: 'Pilates studio in Canning: a site built to book the first class.',
@@ -366,17 +422,27 @@ var EN = {
   pInvName: 'Countryside invitation', pInv: 'Digital wedding invitation: an opening envelope, RSVP and a dashboard for the couple.', tInvite: 'Invitation',
   pRinnovo: 'Architecture studio and interior design shop.',
   tRealEstate: 'Real estate', tHealth: 'Health', tArch: 'Architecture', tCeotiCover: 'Health · with Valor Digital',
-  s4Label: '(04) How I work', s4Title: 'Simple, clear, with live progress.',
+  s4Label: '(05) How I work', s4Title: 'Simple, clear, with live progress.',
   st1t: 'Call', st1p: 'I learn about your business, what you need and what the site should achieve.',
   st2t: 'Design', st2p: 'Structure first, then color and details. We refine it together.',
   st3t: 'Build', st3p: 'I build every screen with a live link so you can follow along.',
-  st4t: 'Launch', st4p: 'We go live, I show you how to use it and stay close for anything you need.',
-  s5Label: '(05) FAQ',
+  st4t: 'Launch', st4p: 'We go live and I show you how to use it.',
+  st5t: 'Follow-up', st5p: "Every month we measure and fix what isn't working.",
+  plLabel: '(02) Partnership', plTitle: "I don't hand over a site <em>and disappear.</em>",
+  plLead: 'I work with each client as a partner: every month we measure, see what works and improve it. Choose how much you want to delegate.',
+  pl1: 'Care', pl1f: 'Keep your site always up to date', pl1a: 'Updates, security and backups', pl1b: 'Changes and content or product uploads', pl1c: 'Monthly summary: visits, inquiries or sales', pl1d: 'WhatsApp group and a shared to-do list',
+  pl2: 'Growth', pl2f: 'Bring people back to buy or reach out', pl2a: 'Everything in Care', pl2b: 'Newsletter and automated emails: welcome, abandoned cart and reviews', pl2c: 'Monthly report on what worked and what to change', pl2d: 'Weekly 30-minute call',
+  pl3: 'Partner', pl3f: 'A year-round sales plan', pl3a: 'Everything in Growth', pl3b: 'One data-driven improvement per month, aimed at selling more', pl3c: 'Sales calendar for the next 3 months', pl3d: 'Same-day replies',
+  plNote: 'Each plan includes everything in the previous one and can be changed with notice before month-end. Pricing depends on your project: I put the plan together after a short call.',
+  plCta: 'Ask about a plan',
+  q0: 'What happens after the site goes live?', a0: 'You can carry on by yourself, or choose a partnership plan so I keep it up to date, measure how it performs and improve it every month.',
+  oPlan: 'A partnership plan',
+  s5Label: '(06) FAQ',
   q1: 'How much does a website cost?', a1: 'It depends on what you need: a company site is not the same as a store with hundreds of products. After a short call I send you a fixed quote, no surprises.',
   q2: 'How long does it take?', a2: 'A website usually takes 1 to 3 months, depending on size and review rounds. A digital invitation is much faster.',
   q3: 'Will I be able to edit it myself?', a3: 'Yes. I hand it over ready for you to change texts, photos and products, and I show you how.',
   q4: 'Who owns the site when it is done?', a4: 'You do. Domain, hosting and access are in your name. I only ask to show it in my portfolio.',
-  s6Label: '(06) Contact', cTitle: 'Shall we<em>?</em>',
+  s6Label: '(07) Contact', cTitle: 'Shall we<em>?</em>',
   cLead: 'Tell me your idea on WhatsApp. I usually reply the same day.',
   fIntro: 'Rather not use WhatsApp? Leave your details.',
   fName: 'Your name', fReply: 'Email or WhatsApp', fType: 'What do you need?',
@@ -389,19 +455,21 @@ var MSG = {
   es: {
     general: 'Hola Máximo, vi tu web y quiero consultarte por un proyecto.',
     invite: 'Hola Máximo, vi tu invitación digital y quiero una para mi evento.',
+    plan: 'Hola Máximo, quiero consultar por un plan de acompañamiento para mi web.',
     sending: 'Enviando…', ok: '¡Listo! Te respondo pronto.',
     error: 'No se pudo enviar. Probá por WhatsApp.', required: 'Completá tu nombre y cómo responderte.',
     viaWpp: 'Al enviar se abre WhatsApp con tu mensaje listo.',
-    types: { web: 'una página web', shop: 'una tienda online', newsletter: 'un newsletter para mi tienda', invite: 'una invitación digital', other: 'otra cosa' },
+    types: { web: 'una página web', shop: 'una tienda online', plan: 'un plan de acompañamiento', newsletter: 'un newsletter para mi tienda', invite: 'una invitación digital', other: 'otra cosa' },
     form: function (d) { return 'Hola Máximo, soy ' + d.name + '. Necesito ' + d.type + '.' + (d.msg ? '\n' + d.msg : '') + '\nMe podés responder a: ' + d.reply; }
   },
   en: {
     general: 'Hi Máximo, I saw your website and would like to ask about a project.',
     invite: 'Hi Máximo, I saw your digital invitation and I would like one for my event.',
+    plan: 'Hi Máximo, I would like to ask about a partnership plan for my website.',
     sending: 'Sending…', ok: 'Done! I will reply soon.',
     error: 'It could not be sent. Please try WhatsApp.', required: 'Please add your name and how to reach you.',
     viaWpp: 'Sending opens WhatsApp with your message ready.',
-    types: { web: 'a website', shop: 'an online store', newsletter: 'a newsletter for my store', invite: 'a digital invitation', other: 'something else' },
+    types: { web: 'a website', shop: 'an online store', plan: 'a partnership plan', newsletter: 'a newsletter for my store', invite: 'a digital invitation', other: 'something else' },
     form: function (d) { return 'Hi Máximo, I am ' + d.name + '. I need ' + d.type + '.' + (d.msg ? '\n' + d.msg : '') + '\nYou can reach me at: ' + d.reply; }
   }
 };
