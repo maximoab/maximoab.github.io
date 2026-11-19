@@ -412,3 +412,37 @@ ul, ol { list-style: none; }
 .plans-foot p { max-width: 62ch; color: var(--mute); font-size: 16px; }
 @media (max-width: 960px) { .plans { grid-template-columns: 1fr; } }
 @media (max-width: 520px) { .plans-foot .btn { width: 100%; } }
+
+/* ===== v5: ver más proyectos ===== */
+.work-row.is-hidden { display: none; }
+.work-row.is-new { animation: rowIn .7s var(--ease) both; }
+@keyframes rowIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+.more {
+  display: grid; grid-template-columns: 1fr auto 56px; align-items: center; gap: 20px;
+  width: 100%; margin-top: 18px; padding: 14px 14px 14px 28px;
+  background: transparent; color: var(--ink);
+  border: 1px solid var(--ink); border-radius: 999px; cursor: pointer; text-align: left;
+  transition: background .3s var(--ease), color .3s var(--ease);
+}
+.more[hidden] { display: none; }
+.more-label { font-weight: 500; font-size: clamp(20px, 2vw, 28px); letter-spacing: -.035em; }
+.more-count { color: var(--mute); transition: color .3s; }
+.more-icon {
+  position: relative; width: 56px; height: 56px; border-radius: 50%; background: var(--ink);
+  transition: background .3s var(--ease), transform .5s var(--ease);
+}
+.more-icon::before, .more-icon::after {
+  content: ''; position: absolute; left: 50%; top: 50%; width: 18px; height: 2px; background: var(--bg);
+  transform: translate(-50%, -50%); transition: background .3s;
+}
+.more-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+@media (hover: hover) {
+  .more:hover { background: var(--ink); color: var(--bg); }
+  .more:hover .more-count { color: var(--on-dark-mute); }
+  .more:hover .more-icon { background: var(--accent); transform: rotate(90deg); }
+  .more:hover .more-icon::before, .more:hover .more-icon::after { background: var(--ink); }
+}
+.more:active .more-icon { transform: rotate(180deg) scale(.92); }
+@media (max-width: 520px) { .more { padding-left: 22px; grid-template-columns: 1fr auto 48px; gap: 12px; } .more-icon { width: 48px; height: 48px; } }
+@media (prefers-reduced-motion: reduce) { .work-row.is-new { animation: none; } }

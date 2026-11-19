@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=13">
+  <link rel="stylesheet" href="./styles.css?v=14">
 </head>
 
 <body>
@@ -203,8 +203,8 @@
     </div>
 
     <div class="work reveal">
-      <a class="work-row" href="https://utiluno.com.ar" target="_blank" rel="noopener" data-cover="Util Uno">
-        <div class="w-thumb"><div class="cover"><span>E-commerce B2B</span><b>Util Uno</b></div></div>
+      <a class="work-row" href="https://utiluno.com.ar" target="_blank" rel="noopener" data-img="./Imagenes/web/p-utiluno.webp">
+        <div class="w-thumb"><img src="./Imagenes/web/p-utiluno.webp" alt="" loading="lazy"></div>
         <span class="w-n">01</span>
         <span class="w-name">Util Uno</span>
         <span class="w-desc" data-i18n="pUtil">Tienda mayorista: registro de comercios, precios para clientes y pedidos por WhatsApp.</span>
@@ -235,8 +235,8 @@
         <span class="w-tag" data-i18n="tRealEstate">Inmobiliaria</span>
         <span class="w-arr">↗</span>
       </a>
-      <a class="work-row" href="https://ceoti.com.ar" target="_blank" rel="noopener" data-cover="CEOTI">
-        <div class="w-thumb"><div class="cover"><span data-i18n="tCeotiCover">Salud · con Valor Digital</span><b>CEOTI</b></div></div>
+      <a class="work-row" href="https://ceoti.com.ar" target="_blank" rel="noopener" data-img="./Imagenes/web/p-ceoti.webp">
+        <div class="w-thumb"><img src="./Imagenes/web/p-ceoti.webp" alt="" loading="lazy"></div>
         <span class="w-n">05</span>
         <span class="w-name">CEOTI</span>
         <span class="w-desc" data-i18n="pCeoti">Centro de traumatología y ortopedia. Hecho junto a la agencia Valor Digital.</span>
@@ -260,6 +260,11 @@
         <span class="w-arr">↗</span>
       </a>
     </div>
+    <button type="button" class="more" id="more-work" hidden>
+      <span class="more-label" data-i18n="moreWork">Ver más proyectos</span>
+      <span class="more-count mono" id="more-count"></span>
+      <span class="more-icon" aria-hidden="true"></span>
+    </button>
     <div class="work-preview" id="work-preview" aria-hidden="true"></div>
   </section>
 
@@ -382,8 +387,21 @@
 var CONFIG = {
   whatsapp: '64272688823',   // número con código de país, sin + ni espacios
   web3formsKey: '',          // clave de web3forms.com; vacía = el formulario abre WhatsApp
-  inviteDemoUrl: 'https://lindainvitaciones.com.ar/demo-campestre'  // invitación de ejemplo; vacío = no se muestra
+  inviteDemoUrl: 'https://lindainvitaciones.com.ar/demo-campestre',  // invitación de ejemplo; vacío = no se muestra
+  gaId: ''                   // ID de Google Analytics 4 (G-XXXXXXXXXX); vacío = no se mide
 };
+
+/* ===== Google Analytics 4 ===== */
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+function track(name, params) { if (CONFIG.gaId) gtag('event', name, params || {}); }
+if (CONFIG.gaId) {
+  var ga = document.createElement('script');
+  ga.async = true; ga.src = 'https://www.googletagmanager.com/gtag/js?id=' + CONFIG.gaId;
+  document.head.appendChild(ga);
+  gtag('js', new Date());
+  gtag('config', CONFIG.gaId);
+}
 
 var WORDS = {
   es: ['tu negocio.', 'tu tienda online.', 'tu consultorio.', 'tu casamiento.'],
@@ -434,7 +452,7 @@ var EN = {
   pl2: 'Growth', pl2f: 'Bring people back to buy or reach out', pl2a: 'Everything in Care', pl2b: 'Newsletter and automated emails: welcome, abandoned cart and reviews', pl2c: 'Monthly report on what worked and what to change', pl2d: 'Weekly 30-minute call',
   pl3: 'Partner', pl3f: 'A year-round sales plan', pl3a: 'Everything in Growth', pl3b: 'One data-driven improvement per month, aimed at selling more', pl3c: 'Sales calendar for the next 3 months', pl3d: 'Same-day replies',
   plNote: 'Each plan includes everything in the previous one and can be changed with notice before month-end. Pricing depends on your project: I put the plan together after a short call.',
-  plCta: 'Ask about a plan',
+  plCta: 'Ask about a plan', moreWork: 'See more work',
   q0: 'What happens after the site goes live?', a0: 'You can carry on by yourself, or choose a partnership plan so I keep it up to date, measure how it performs and improve it every month.',
   oPlan: 'A partnership plan',
   s5Label: '(06) FAQ',
@@ -494,7 +512,6 @@ var MSG = {
     document.querySelectorAll('.js-wpp').forEach(function (a) { a.href = wppUrl(MSG[lang][a.dataset.wpp]); });
     document.getElementById('form-note').textContent = CONFIG.web3formsKey ? '' : MSG[lang].viaWpp;
     wordIndex = 0; setWord(WORDS[lang][0], true);
-    try { localStorage.setItem('lang', lang); } catch (e) {}
   }
 
   /* ---- Palabra que rota ---- */
@@ -520,9 +537,13 @@ var MSG = {
   }, 2600);
 
   var saved = null;
-  try { saved = localStorage.getItem('lang'); } catch (e) {}
-  setLang(saved || ((navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en'));
-  document.getElementById('lang-toggle').addEventListener('click', function () { setLang(lang === 'es' ? 'en' : 'es'); });
+  try { saved = localStorage.getItem('langElegido'); localStorage.removeItem('lang'); } catch (e) {}
+  setLang(saved === 'en' ? 'en' : 'es');   // español siempre, salvo que la persona elija inglés
+  document.getElementById('lang-toggle').addEventListener('click', function () {
+    setLang(lang === 'es' ? 'en' : 'es');
+    try { localStorage.setItem('langElegido', lang); } catch (e) {}
+    track('cambio_idioma', { idioma: lang });
+  });
 
   /* ---- Reloj ---- */
   var clock = document.getElementById('clock');
@@ -573,6 +594,57 @@ var MSG = {
     });
   }
 
+  /* ---- Medición de clics ---- */
+  function placeOf(el) {
+    if (el.classList.contains('wpp-fab')) return 'boton_flotante';
+    if (el.classList.contains('sticker')) return 'sticker';
+    if (el.classList.contains('band')) return 'banda';
+    var box = el.closest('section, header, footer');
+    return box ? (box.id || box.className.split(' ')[0]) : 'otro';
+  }
+  document.querySelectorAll('.js-wpp').forEach(function (a) {
+    a.addEventListener('click', function () {
+      track('contact_whatsapp', { ubicacion: placeOf(a), motivo: a.dataset.wpp, idioma: lang });
+    });
+  });
+  document.querySelectorAll('.work-row').forEach(function (a) {
+    a.addEventListener('click', function () {
+      track('ver_proyecto', { proyecto: a.querySelector('.w-name').textContent.trim() });
+    });
+  });
+  document.querySelectorAll('.svc').forEach(function (a) {
+    a.addEventListener('click', function () {
+      track('ver_servicio', { servicio: a.querySelector('h3').textContent.trim() });
+    });
+  });
+  document.getElementById('invite-demo').addEventListener('click', function () { track('ver_invitacion_demo'); });
+  document.querySelector('.invite-chip').addEventListener('click', function () { track('aviso_invitacion'); });
+
+  /* ---- Proyectos: 3 a la vista y de a 2 más ---- */
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.work-row'));
+  var moreBtn = document.getElementById('more-work');
+  var moreCount = document.getElementById('more-count');
+  var shown = 3;
+  function paintMore() {
+    var left = rows.length - shown;
+    moreCount.textContent = '+' + left;
+    moreBtn.hidden = left <= 0;
+  }
+  rows.forEach(function (r, i) { if (i >= shown) r.classList.add('is-hidden'); });
+  paintMore();
+  moreBtn.addEventListener('click', function () {
+    var added = rows.slice(shown, shown + 2);
+    added.forEach(function (r, i) {
+      r.classList.remove('is-hidden');
+      r.classList.add('is-new');
+      r.style.animationDelay = (i * 90) + 'ms';
+    });
+    shown += 2;
+    track('ver_mas_proyectos', { mostrados: Math.min(shown, rows.length) });
+    paintMore();
+    if (moreBtn.hidden && added[0]) added[0].focus({ preventScroll: true });
+  });
+
   /* ---- Invitaciones ---- */
   if (CONFIG.inviteDemoUrl) {
     var demo = document.getElementById('invite-demo');
@@ -589,6 +661,7 @@ var MSG = {
     e.preventDefault();
     var d = { name: form.name.value.trim(), reply: form.reply_to.value.trim(), type: MSG[lang].types[form.type.value], msg: form.message.value.trim() };
     if (!d.name || !d.reply) { note.textContent = MSG[lang].required; return; }
+    track('generate_lead', { tipo: form.type.value, via: CONFIG.web3formsKey ? 'formulario' : 'whatsapp', idioma: lang });
     if (!CONFIG.web3formsKey) { window.open(wppUrl(MSG[lang].form(d)), '_blank', 'noopener'); return; }
     note.textContent = MSG[lang].sending;
     fetch('https://api.web3forms.com/submit', {
