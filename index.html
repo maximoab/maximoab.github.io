@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=27">
+  <link rel="stylesheet" href="./styles.css?v=28">
 </head>
 
 <body id="top">
@@ -37,7 +37,17 @@
       <a href="#sobre-mi" data-i18n="navAbout">Sobre mí</a>
     </nav>
     <div class="top-actions">
-      <button type="button" class="lang" id="lang-toggle" aria-label="Switch to English">EN</button>
+      <div class="lang-wrap">
+        <button type="button" class="lang" id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="Idioma / Language">
+          <svg class="lang-globe" viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8" cy="8" r="6.4"/><path d="M1.6 8h12.8M8 1.6c1.9 2 2.8 4.1 2.8 6.4S9.9 12.4 8 14.4M8 1.6C6.1 3.6 5.2 5.7 5.2 8s.9 4.4 2.8 6.4"/></svg>
+          <span id="lang-current">ES</span>
+        </button>
+        <div class="lang-menu" id="lang-menu" role="menu" aria-label="Idioma / Language" hidden>
+          <p class="lang-menu-title mono">Idioma · Language</p>
+          <button type="button" role="menuitemradio" aria-checked="true" data-lang="es"><span>Español</span><span class="mono">ES</span></button>
+          <button type="button" role="menuitemradio" aria-checked="false" data-lang="en"><span>English</span><span class="mono">EN</span></button>
+        </div>
+      </div>
       <a class="btn btn--solid js-wpp" data-wpp="general" href="#" target="_blank" rel="noopener" data-i18n="navCta">Hablemos</a>
     </div>
   </div>
@@ -80,8 +90,8 @@
   <section class="clients" aria-label="Clientes">
     <div class="container mono clients-label" data-i18n="clients">Marcas que confiaron en mí</div>
     <div class="marquee">
-      <ul><li><img src="./Imagenes/clientes/utiluno.png" alt="Util Uno" style="height:34px" loading="lazy"></li><li><img src="./Imagenes/clientes/revivete.png" alt="Revivete Matcha" style="height:46px" loading="lazy"></li><li><img src="./Imagenes/clientes/biozen.png" alt="Biozen Pilates" style="height:54px" loading="lazy"></li><li><img src="./Imagenes/clientes/berardi.png" alt="Berardi Propiedades" style="height:38px" loading="lazy"></li><li><img src="./Imagenes/clientes/ceoti.png" alt="CEOTI" style="height:44px" loading="lazy"></li><li><img src="./Imagenes/clientes/rinnovo.png" alt="Rinnovo Interiores" style="height:34px" loading="lazy"></li><li><img src="./Imagenes/clientes/vivi.png" alt="Viví Buenos Aires" style="height:28px" loading="lazy"></li><li><img src="./Imagenes/clientes/dharma.png" alt="Dharma Canning" style="height:54px" loading="lazy"></li><li><img src="./Imagenes/clientes/innoquim.png" alt="Innoquim" style="height:42px" loading="lazy"></li><li><img src="./Imagenes/clientes/cormery.png" alt="Cormery" style="height:54px" loading="lazy"></li><li><img src="./Imagenes/clientes/generators.png" alt="Generators Group" style="height:40px" loading="lazy"></li></ul>
-      <ul aria-hidden="true"><li><img src="./Imagenes/clientes/utiluno.png" alt="" style="height:34px" loading="lazy"></li><li><img src="./Imagenes/clientes/revivete.png" alt="" style="height:46px" loading="lazy"></li><li><img src="./Imagenes/clientes/biozen.png" alt="" style="height:54px" loading="lazy"></li><li><img src="./Imagenes/clientes/berardi.png" alt="" style="height:38px" loading="lazy"></li><li><img src="./Imagenes/clientes/ceoti.png" alt="" style="height:44px" loading="lazy"></li><li><img src="./Imagenes/clientes/rinnovo.png" alt="" style="height:34px" loading="lazy"></li><li><img src="./Imagenes/clientes/vivi.png" alt="" style="height:28px" loading="lazy"></li><li><img src="./Imagenes/clientes/dharma.png" alt="" style="height:54px" loading="lazy"></li><li><img src="./Imagenes/clientes/innoquim.png" alt="" style="height:42px" loading="lazy"></li><li><img src="./Imagenes/clientes/cormery.png" alt="" style="height:54px" loading="lazy"></li><li><img src="./Imagenes/clientes/generators.png" alt="" style="height:40px" loading="lazy"></li></ul>
+      <ul><li><img src="./Imagenes/clientes/utiluno.png" alt="Util Uno" width="150" height="34" style="height:34px;width:150px" decoding="async"></li><li><img src="./Imagenes/clientes/revivete.png" alt="Revivete Matcha" width="104" height="46" style="height:46px;width:104px" decoding="async"></li><li><img src="./Imagenes/clientes/biozen.png" alt="Biozen Pilates" width="77" height="54" style="height:54px;width:77px" decoding="async"></li><li><img src="./Imagenes/clientes/berardi.png" alt="Berardi Propiedades" width="127" height="38" style="height:38px;width:127px" decoding="async"></li><li><img src="./Imagenes/clientes/ceoti.png" alt="CEOTI" width="104" height="44" style="height:44px;width:104px" decoding="async"></li><li><img src="./Imagenes/clientes/rinnovo.png" alt="Rinnovo Interiores" width="137" height="34" style="height:34px;width:137px" decoding="async"></li><li><img src="./Imagenes/clientes/vivi.png" alt="Viví Buenos Aires" width="181" height="28" style="height:28px;width:181px" decoding="async"></li><li><img src="./Imagenes/clientes/dharma.png" alt="Dharma Canning" width="50" height="54" style="height:54px;width:50px" decoding="async"></li><li><img src="./Imagenes/clientes/innoquim.png" alt="Innoquim" width="115" height="42" style="height:42px;width:115px" decoding="async"></li><li><img src="./Imagenes/clientes/cormery.png" alt="Cormery" width="64" height="54" style="height:54px;width:64px" decoding="async"></li><li><img src="./Imagenes/clientes/generators.png" alt="Generators Group" width="122" height="40" style="height:40px;width:122px" decoding="async"></li></ul>
+      <ul aria-hidden="true"><li><img src="./Imagenes/clientes/utiluno.png" alt="" width="150" height="34" style="height:34px;width:150px" decoding="async"></li><li><img src="./Imagenes/clientes/revivete.png" alt="" width="104" height="46" style="height:46px;width:104px" decoding="async"></li><li><img src="./Imagenes/clientes/biozen.png" alt="" width="77" height="54" style="height:54px;width:77px" decoding="async"></li><li><img src="./Imagenes/clientes/berardi.png" alt="" width="127" height="38" style="height:38px;width:127px" decoding="async"></li><li><img src="./Imagenes/clientes/ceoti.png" alt="" width="104" height="44" style="height:44px;width:104px" decoding="async"></li><li><img src="./Imagenes/clientes/rinnovo.png" alt="" width="137" height="34" style="height:34px;width:137px" decoding="async"></li><li><img src="./Imagenes/clientes/vivi.png" alt="" width="181" height="28" style="height:28px;width:181px" decoding="async"></li><li><img src="./Imagenes/clientes/dharma.png" alt="" width="50" height="54" style="height:54px;width:50px" decoding="async"></li><li><img src="./Imagenes/clientes/innoquim.png" alt="" width="115" height="42" style="height:42px;width:115px" decoding="async"></li><li><img src="./Imagenes/clientes/cormery.png" alt="" width="64" height="54" style="height:54px;width:64px" decoding="async"></li><li><img src="./Imagenes/clientes/generators.png" alt="" width="122" height="40" style="height:40px;width:122px" decoding="async"></li></ul>
     </div>
   </section>
 
@@ -527,9 +537,8 @@ var MSG = {
     var dict = lang === 'en' ? EN : ES;
     nodes.forEach(function (el) { var v = dict[el.dataset.i18n]; if (v !== undefined) el.innerHTML = v; });
     document.documentElement.lang = lang;
-    var t = document.getElementById('lang-toggle');
-    t.textContent = lang === 'en' ? 'ES' : 'EN';
-    t.setAttribute('aria-label', lang === 'en' ? 'Cambiar a español' : 'Switch to English');
+    document.getElementById('lang-current').textContent = lang.toUpperCase();
+    document.querySelectorAll('#lang-menu [data-lang]').forEach(function (b) { b.setAttribute('aria-checked', String(b.dataset.lang === lang)); });
     document.querySelectorAll('.js-wpp').forEach(function (a) { a.href = wppUrl(MSG[lang][a.dataset.wpp]); });
     document.getElementById('form-note').textContent = CONFIG.web3formsKey ? '' : MSG[lang].viaWpp;
     wordIndex = 0; setWord(WORDS[lang][0], true);
@@ -570,10 +579,30 @@ var MSG = {
   var saved = null;
   try { saved = localStorage.getItem('langElegido'); localStorage.removeItem('lang'); } catch (e) {}
   setLang(saved === 'en' ? 'en' : 'es');   // español siempre, salvo que la persona elija inglés
-  document.getElementById('lang-toggle').addEventListener('click', function () {
-    setLang(lang === 'es' ? 'en' : 'es');
-    try { localStorage.setItem('langElegido', lang); } catch (e) {}
-    track('cambio_idioma', { idioma: lang });
+  // selector de idioma: abre un menú chico con Español / English
+  var langBtn = document.getElementById('lang-toggle'), langMenu = document.getElementById('lang-menu');
+  function openLang(open) {
+    langMenu.hidden = !open; langBtn.setAttribute('aria-expanded', String(open));
+    if (open) { var cur = langMenu.querySelector('[aria-checked="true"]'); if (cur) cur.focus(); }
+  }
+  langBtn.addEventListener('click', function (e) { e.stopPropagation(); openLang(langMenu.hidden); });
+  langMenu.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-lang]'); if (!b) return;
+    if (b.dataset.lang !== lang) {
+      setLang(b.dataset.lang);
+      try { localStorage.setItem('langElegido', lang); } catch (err) {}
+      track('cambio_idioma', { idioma: lang });
+    }
+    openLang(false); langBtn.focus();
+  });
+  document.addEventListener('click', function (e) { if (!langMenu.hidden && !e.target.closest('.lang-wrap')) openLang(false); });
+  document.addEventListener('keydown', function (e) {
+    if (langMenu.hidden) return;
+    if (e.key === 'Escape') { openLang(false); langBtn.focus(); }
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      var items = [].slice.call(langMenu.querySelectorAll('[data-lang]')), i = items.indexOf(document.activeElement);
+      items[(i + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length].focus(); e.preventDefault();
+    }
   });
 
   /* ---- Reloj ---- */
