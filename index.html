@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=28">
+  <link rel="stylesheet" href="./styles.css?v=30">
 </head>
 
 <body id="top">
@@ -239,9 +239,17 @@
         <span class="w-tag">Landing</span>
         <span class="w-arr">↗</span>
       </a>
+      <a class="work-row" href="https://latiendajet.com.ar" target="_blank" rel="noopener" data-img="./Imagenes/web/p-tiendajet.webp">
+        <div class="w-thumb"><img src="./Imagenes/web/p-tiendajet.webp" alt="" loading="lazy"></div>
+        <span class="w-n">04</span>
+        <span class="w-name">La Tienda Jet</span>
+        <span class="w-desc" data-i18n="pJet">Indumentaria, blanquería y hogar, para minoristas y mayoristas, con los pedidos conectados al sistema de gestión del local.</span>
+        <span class="w-tag">E-commerce</span>
+        <span class="w-arr">↗</span>
+      </a>
       <a class="work-row" href="https://berardipropiedades.com.ar" target="_blank" rel="noopener" data-img="./Imagenes/web/p-berardi.webp">
         <div class="w-thumb"><img src="./Imagenes/web/p-berardi.webp" alt="" loading="lazy"></div>
-        <span class="w-n">04</span>
+        <span class="w-n">05</span>
         <span class="w-name">Berardi Propiedades</span>
         <span class="w-desc" data-i18n="pBerardi">Inmobiliaria con buscador de propiedades y fichas con video.</span>
         <span class="w-tag" data-i18n="tRealEstate">Inmobiliaria</span>
@@ -249,7 +257,7 @@
       </a>
       <a class="work-row" href="https://ceoti.com.ar" target="_blank" rel="noopener" data-img="./Imagenes/web/p-ceoti.webp">
         <div class="w-thumb"><img src="./Imagenes/web/p-ceoti.webp" alt="" loading="lazy"></div>
-        <span class="w-n">05</span>
+        <span class="w-n">06</span>
         <span class="w-name">CEOTI</span>
         <span class="w-desc" data-i18n="pCeoti">Centro de traumatología y ortopedia. Hecho junto a la agencia Valor Digital.</span>
         <span class="w-tag" data-i18n="tHealth">Salud</span>
@@ -257,7 +265,7 @@
       </a>
       <a class="work-row" href="https://lindainvitaciones.com.ar/demo-campestre" target="_blank" rel="noopener" data-img="./Imagenes/web/p-invitacion.webp">
         <div class="w-thumb"><img src="./Imagenes/web/p-invitacion.webp" alt="" loading="lazy"></div>
-        <span class="w-n">06</span>
+        <span class="w-n">07</span>
         <span class="w-name">Linda Invitaciones</span>
         <span class="w-desc" data-i18n="pInv">Mi marca de invitaciones digitales. Mirá la demo campestre: sobre que se abre, confirmación de asistencia y panel para los novios.</span>
         <span class="w-tag" data-i18n="tInvite">Invitación digital</span>
@@ -265,7 +273,7 @@
       </a>
       <a class="work-row" href="https://rinnovointeriores.com.ar" target="_blank" rel="noopener" data-img="./Imagenes/web/p-rinnovo.webp">
         <div class="w-thumb"><img src="./Imagenes/web/p-rinnovo.webp" alt="" loading="lazy"></div>
-        <span class="w-n">07</span>
+        <span class="w-n">08</span>
         <span class="w-name">Rinnovo Interiores</span>
         <span class="w-desc" data-i18n="pRinnovo">Estudio de arquitectura y tienda de interiorismo.</span>
         <span class="w-tag" data-i18n="tArch">Arquitectura</span>
@@ -467,6 +475,7 @@ var EN = {
   pCeoti: 'Orthopedics and traumatology center. Built with the Valor Digital agency.',
   pInv: 'My digital invitation brand. See the countryside demo: an opening envelope, RSVP and a dashboard for the couple.', tInvite: 'Digital invitation',
   pRinnovo: 'Architecture studio and interior design shop.',
+  pJet: "Clothing, bedding and homeware for retail and wholesale buyers, with orders connected to the shop's management system.",
   tRealEstate: 'Real estate', tHealth: 'Health', tArch: 'Architecture', tCeotiCover: 'Health · with Valor Digital',
   abLabel: '(05) About', abTitle: 'There is a person on the other side, <em>not an agency.</em>',
   abP1: "I'm Máximo, a web designer and developer based in Santiago del Estero, Argentina. I work remotely with businesses all over the country, and you always talk to me: the person who designs it is the one who builds it and answers your WhatsApp.",
@@ -652,6 +661,15 @@ var MSG = {
       row.addEventListener('mousemove', function (e) { px = e.clientX; py = e.clientY; });
       row.addEventListener('mouseleave', function () { preview.classList.remove('is-on'); setTimeout(function () { if (!preview.classList.contains('is-on')) moving = false; }, 400); });
     });
+  }
+
+  // En celular (sin mouse) no hay hover: el proyecto que pasa por el centro de la pantalla se activa solo
+  // (se marca siempre; el CSS solo lo muestra en pantallas angostas o táctiles)
+  if ('IntersectionObserver' in window) {
+    var focusIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { en.target.classList.toggle('is-active', en.isIntersecting); });
+    }, { rootMargin: '-42% 0px -42% 0px' });
+    document.querySelectorAll('.work-row').forEach(function (r) { focusIO.observe(r); });
   }
 
   /* ---- Medición de clics ---- */

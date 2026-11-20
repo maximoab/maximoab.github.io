@@ -244,7 +244,7 @@ ul, ol { list-style: none; }
 .work-row .w-tag { font-family: var(--mono); font-size: 13px; color: var(--mute); text-transform: uppercase; letter-spacing: .04em; }
 .work-row .w-arr { justify-self: end; font-size: 20px; transition: transform .3s var(--ease), color .2s; }
 .work-row .w-thumb { display: none; }
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) and (min-width: 861px) {
   .work:hover .work-row { color: rgba(37,56,45,.35); }
   .work:hover .work-row .w-desc, .work:hover .work-row .w-tag { color: rgba(37,56,45,.3); }
   .work .work-row:hover { color: var(--ink); padding-left: 14px; }
@@ -275,6 +275,18 @@ ul, ol { list-style: none; }
   .work-row .w-tag { grid-column: 2 / -1; }
   .work-row .w-arr { grid-row: 2; grid-column: 3; }
   .work-preview { display: none; }
+}
+
+/* Celular: el proyecto del centro de la pantalla toma foco al hacer scroll */
+@media (max-width: 860px), (hover: none), (pointer: coarse) {
+  .work-row .w-thumb img { transform: scale(1.06); filter: grayscale(.6); opacity: .8; transition: transform 1.1s var(--ease), filter .7s var(--ease), opacity .7s var(--ease); }
+  .work-row .w-arr { transition: transform .5s var(--ease); }
+  .work-row.is-active .w-thumb img { transform: none; filter: none; opacity: 1; }
+  .work-row.is-active .w-arr { transform: translate(3px, -3px); }
+  .work-row .w-thumb { -webkit-tap-highlight-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-row .w-thumb img { transform: none; transition: none; }
 }
 
 /* Proceso */
