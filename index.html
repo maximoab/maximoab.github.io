@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Máximo Argañarás · Diseño web e invitaciones digitales</title>
   <meta name="description" content="Diseño y desarrollo sitios web, tiendas online e invitaciones digitales. Máximo Argañarás, Santiago del Estero, Argentina.">
-  <meta name="theme-color" content="#FAFAF7">
+  <meta name="theme-color" content="#F5F3EB">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://maximoab.github.io/">
@@ -21,19 +21,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=14">
+  <link rel="stylesheet" href="./styles.css?v=18">
 </head>
 
 <body>
 
 <header class="top" id="top">
   <div class="container top-inner">
-    <a class="brand" href="#">ma <small>Máximo Argañarás</small></a>
+    <a class="brand" href="#" aria-label="Máximo Argañarás, inicio">máximo<span class="brand-ast" aria-hidden="true">✳</span></a>
     <nav class="nav" aria-label="Principal">
       <a href="#servicios" data-i18n="navServices">Servicios</a>
       <a href="#planes" data-i18n="navPlans">Planes</a>
       <a href="#invitaciones" data-i18n="navInvites">Invitaciones</a>
       <a href="#proyectos" data-i18n="navWork">Proyectos</a>
+      <a href="#sobre-mi" data-i18n="navAbout">Sobre mí</a>
     </nav>
     <div class="top-actions">
       <button type="button" class="lang" id="lang-toggle" aria-label="Switch to English">EN</button>
@@ -45,7 +46,7 @@
 <main>
 
   <!-- HERO -->
-  <section class="hero container">
+  <section class="hero container bleed">
     <a class="sticker js-wpp" data-wpp="general" href="#" target="_blank" rel="noopener" aria-label="Escribime por WhatsApp">
       <svg viewBox="0 0 200 200" aria-hidden="true">
         <defs><path id="circ" d="M100,100 m-73,0 a73,73 0 1,1 146,0 a73,73 0 1,1 -146,0"/></defs>
@@ -65,7 +66,7 @@
 
     <div class="hero-foot">
       <img class="hero-face" src="./Imagenes/web/about-me.webp" alt="Máximo Argañarás" width="72" height="72">
-      <p class="hero-lead" data-i18n="heroLead">Soy Máximo. Hago sitios web, tiendas online e invitaciones digitales, y los acompaño después de publicar para que sigan funcionando y vendiendo.</p>
+      <p class="hero-lead" data-i18n="heroLead"><strong>Hola, soy Máximo.</strong> Hago sitios web, tiendas online e invitaciones digitales. Y no desaparezco cuando se publican: los sigo cuidando para que funcionen y vendan.</p>
       <div class="hero-ctas">
         <a class="btn btn--solid js-wpp" data-wpp="general" href="#" target="_blank" rel="noopener"><span data-i18n="ctaWpp">Escribime por WhatsApp</span> <span class="arr">→</span></a>
         <a class="btn btn--ghost" href="#proyectos" data-i18n="ctaWork">Ver proyectos</a>
@@ -94,7 +95,7 @@
       <a class="svc js-pick" href="#contacto" data-pick="web">
         <sup class="svc-n">01</sup>
         <h3 data-i18n="sv1t">Sitios web</h3>
-        <p data-i18n="sv1p">Para verse serios y recibir más consultas</p>
+        <p data-i18n="sv1p">Para que te tomen en serio y te escriban más</p>
         <span class="svc-arr" aria-hidden="true">→</span>
       </a>
       <a class="svc js-pick" href="#contacto" data-pick="shop">
@@ -125,7 +126,7 @@
   </section>
 
   <!-- PLANES -->
-  <section class="section container" id="planes">
+  <section class="section container bleed" id="planes">
     <div class="section-head reveal">
       <span class="mono" data-i18n="plLabel">(02) Acompañamiento</span>
       <div>
@@ -181,6 +182,7 @@
         <span class="mono" data-i18n="invLabel">(03) Invitaciones digitales</span>
         <h2 class="h2" data-i18n="invTitle">¿Te llegó una invitación hecha por mí? <em>Hacé la tuya.</em></h2>
         <p class="invites-lead" data-i18n="invLead">Una invitación web para tu casamiento, quince o cumple, lista para mandar por WhatsApp.</p>
+        <p class="invites-brand" data-i18n="invBrand">Las hago con mi propia marca: <strong>Linda Invitaciones.</strong></p>
         <div class="invites-ctas">
           <a href="#" class="btn btn--solid js-wpp" data-wpp="invite" target="_blank" rel="noopener"><span data-i18n="invCta">Quiero mi invitación</span> <span class="arr">→</span></a>
         </div>
@@ -248,7 +250,7 @@
         <span class="w-n">06</span>
         <span class="w-name" data-i18n="pInvName">Invitación campestre</span>
         <span class="w-desc" data-i18n="pInv">Invitación digital de casamiento: sobre que se abre, confirmación de asistencia y panel para los novios.</span>
-        <span class="w-tag" data-i18n="tInvite">Invitación</span>
+        <span class="w-tag">Linda Invitaciones</span>
         <span class="w-arr">↗</span>
       </a>
       <a class="work-row" href="https://rinnovointeriores.com.ar" target="_blank" rel="noopener" data-img="./Imagenes/web/p-rinnovo.webp">
@@ -268,11 +270,27 @@
     <div class="work-preview" id="work-preview" aria-hidden="true"></div>
   </section>
 
+  <!-- SOBRE MÍ -->
+  <section class="section container bleed" id="sobre-mi">
+    <div class="about reveal">
+      <figure class="about-photo">
+        <img src="./Imagenes/web/about-me.webp" alt="Máximo Argañarás" width="613" height="1100" loading="lazy">
+      </figure>
+      <div class="about-copy">
+        <span class="mono mute" data-i18n="abLabel">(05) Sobre mí</span>
+        <h2 class="h2" data-i18n="abTitle">Del otro lado hay una persona, <em>no una agencia.</em></h2>
+        <p data-i18n="abP1">Soy Máximo, diseñador y desarrollador web en Santiago del Estero. Trabajo con negocios de todo el país, a distancia, y siempre hablás conmigo: el que diseña es el mismo que programa y el que te contesta el WhatsApp.</p>
+        <p data-i18n="abP2">Antes de abrir el editor me gusta entender cómo funciona tu negocio. Hago preguntas, te muestro avances reales y cuido esos detalles que nadie nota, hasta que faltan.</p>
+        <a class="about-link js-wpp" data-wpp="general" href="#" target="_blank" rel="noopener" data-i18n="abLink">Si llegaste hasta acá, escribime. Seguro nos entendemos →</a>
+      </div>
+    </div>
+  </section>
+
   <!-- PROCESO -->
-  <section class="section container" id="proceso">
+  <section class="section container bleed" id="proceso">
     <div class="section-head reveal">
-      <span class="mono" data-i18n="s4Label">(05) Cómo trabajo</span>
-      <h2 class="h2" data-i18n="s4Title">Simple, claro y viendo avances en vivo.</h2>
+      <span class="mono" data-i18n="s4Label">(06) Cómo trabajo</span>
+      <h2 class="h2" data-i18n="s4Title">Primero entiendo tu negocio. <em>Después abro el editor.</em></h2>
     </div>
     <div class="steps reveal">
       <div class="step"><span class="mono">01</span><h3 data-i18n="st1t">Charla</h3><p data-i18n="st1p">Entiendo tu negocio, qué necesitás y qué querés lograr con la web.</p></div>
@@ -284,9 +302,9 @@
   </section>
 
   <!-- FAQ -->
-  <section class="section container" id="faq" style="padding-top:0">
+  <section class="section container" id="faq">
     <div class="faq-wrap reveal">
-      <span class="mono mute" data-i18n="s5Label">(06) Preguntas</span>
+      <span class="mono mute" data-i18n="s5Label">(07) Preguntas</span>
       <div class="faq">
         <details>
           <summary data-i18n="q0">¿Qué pasa después de publicar la web?</summary>
@@ -302,11 +320,11 @@
         </details>
         <details>
           <summary data-i18n="q3">¿Voy a poder editarla yo?</summary>
-          <p data-i18n="a3">Sí. Te dejo la web lista para que cambies textos, fotos y productos, y te enseño a hacerlo.</p>
+          <p data-i18n="a3">Sí. Te la dejo lista para que cambies textos, fotos y productos, y te enseño con calma. Si algo se complica, me escribís.</p>
         </details>
         <details>
           <summary data-i18n="q4">¿De quién es la web cuando está terminada?</summary>
-          <p data-i18n="a4">Tuya. El dominio, el hosting y los accesos quedan a tu nombre. Solo te pido poder mostrarla en mi portafolio.</p>
+          <p data-i18n="a4">Tuya. El dominio, el hosting y los accesos quedan a tu nombre. Lo único que te pido es poder mostrarla en mi portafolio.</p>
         </details>
       </div>
     </div>
@@ -324,12 +342,12 @@
 <!-- CONTACTO -->
 <footer class="contact" id="contacto">
   <div class="container contact-inner">
-    <span class="mono" data-i18n="s6Label">(07) Contacto</span>
+    <span class="mono" data-i18n="s6Label">(08) Contacto</span>
     <h2 class="contact-title" data-i18n="cTitle">¿Arrancamos<em>?</em></h2>
 
     <div class="contact-grid">
       <div>
-        <p class="contact-lead" data-i18n="cLead">Contame tu idea por WhatsApp. Suelo responder en el día.</p>
+        <p class="contact-lead" data-i18n="cLead">Contame tu idea por WhatsApp, aunque todavía esté verde. Suelo responder en el día.</p>
         <a class="btn btn--solid btn--light contact-wpp js-wpp" data-wpp="general" href="#" target="_blank" rel="noopener"><span data-i18n="ctaWpp">Escribime por WhatsApp</span> <span class="arr">→</span></a>
         <div class="contact-meta mono">
           <a href="https://www.behance.net/macseunia77c" target="_blank" rel="noopener">Behance ↗</a>
@@ -375,7 +393,7 @@
       <a href="#top" data-i18n="toTop">Volver arriba ↑</a>
     </div>
   </div>
-  <div class="wordmark" aria-hidden="true">Argañarás</div>
+  <div class="wordmark" aria-hidden="true">máximo<span>✳</span></div>
 </footer>
 
 <a class="wpp-fab js-wpp" id="wpp-fab" data-wpp="general" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
@@ -409,23 +427,24 @@ var WORDS = {
 };
 
 var EN = {
-  navServices: 'Services', navInvites: 'Invitations', navWork: 'Work', navPlans: 'Plans', navCta: "Let's talk",
+  navServices: 'Services', navInvites: 'Invitations', navWork: 'Work', navPlans: 'Plans', navAbout: 'About', navCta: "Let's talk",
   metaRole: 'Web design & development',
   h1: 'I design websites for',
-  heroLead: "I'm Máximo. I make websites, online stores and digital invitations, and I stay with you after launch so they keep working and selling.",
+  heroLead: "<strong>Hi, I'm Máximo.</strong> I make websites, online stores and digital invitations. And I don't vanish after launch: I keep looking after them so they work and sell.",
   ctaWpp: 'Message me on WhatsApp', ctaWork: 'See projects',
   chip: '♡ Came from an invitation? See how to get yours →',
   clients: 'Brands that trusted me',
   s1Label: '(01) What I do', s1Title: 'Websites for businesses <em>and for celebrations.</em>',
-  sv1t: 'Websites', sv1p: 'Look serious and get more inquiries.',
-  sv2t: 'Online stores', sv2p: 'Catalog, payments, shipping and connected stock.',
-  sv3t: 'Digital invitations', sv3p: 'Weddings and celebrations, with online RSVP.',
+  sv1t: 'Websites', sv1p: 'So people take you seriously and reach out more',
+  sv2t: 'Online stores', sv2p: 'Catalog, payments, shipping and connected stock',
+  sv3t: 'Digital invitations', sv3p: 'Weddings, sweet fifteens and birthdays, with online RSVP',
   sv4t: 'Monthly partnership', sv4p: 'We measure and improve your site every month, as partners',
   sv5t: 'Newsletter', sv5p: 'For online stores: email campaigns that bring customers back',
   sticker: "LET'S TALK ✳ LET'S TALK ✳ LET'S TALK ✳ ", band: "Let's talk ✳ Message me on WhatsApp ✳", oNews: 'A newsletter for my store',
   invLabel: '(03) Digital invitations',
   invTitle: 'Got an invitation I made? <em>Get your own.</em>',
   invLead: 'A web invitation for your wedding or celebration, ready to share on WhatsApp.',
+  invBrand: 'I make them under my own brand: <strong>Linda Invitaciones.</strong>',
   invCta: 'I want my invitation', invCta2: 'Leave my details', invDemo: 'See a sample invitation ↗',
   inv1: 'Online RSVP, no chasing guests over chat',
   inv2: 'A dashboard to see who is coming, with plus-ones and special menus',
@@ -440,7 +459,11 @@ var EN = {
   pInvName: 'Countryside invitation', pInv: 'Digital wedding invitation: an opening envelope, RSVP and a dashboard for the couple.', tInvite: 'Invitation',
   pRinnovo: 'Architecture studio and interior design shop.',
   tRealEstate: 'Real estate', tHealth: 'Health', tArch: 'Architecture', tCeotiCover: 'Health · with Valor Digital',
-  s4Label: '(05) How I work', s4Title: 'Simple, clear, with live progress.',
+  abLabel: '(05) About', abTitle: 'There is a person on the other side, <em>not an agency.</em>',
+  abP1: "I'm Máximo, a web designer and developer based in Santiago del Estero, Argentina. I work remotely with businesses all over the country, and you always talk to me: the person who designs it is the one who builds it and answers your WhatsApp.",
+  abP2: "Before opening the editor, I like to understand how your business works. I ask questions, show you real progress and take care of the details nobody notices, until they're missing.",
+  abLink: "If you made it this far, message me. I think we'll get along →",
+  s4Label: '(06) How I work', s4Title: 'First I understand your business. <em>Then I open the editor.</em>',
   st1t: 'Call', st1p: 'I learn about your business, what you need and what the site should achieve.',
   st2t: 'Design', st2p: 'Structure first, then color and details. We refine it together.',
   st3t: 'Build', st3p: 'I build every screen with a live link so you can follow along.',
@@ -455,13 +478,13 @@ var EN = {
   plCta: 'Ask about a plan', moreWork: 'See more work',
   q0: 'What happens after the site goes live?', a0: 'You can carry on by yourself, or choose a partnership plan so I keep it up to date, measure how it performs and improve it every month.',
   oPlan: 'A partnership plan',
-  s5Label: '(06) FAQ',
+  s5Label: '(07) FAQ',
   q1: 'How much does a website cost?', a1: 'It depends on what you need: a company site is not the same as a store with hundreds of products. After a short call I send you a fixed quote, no surprises.',
   q2: 'How long does it take?', a2: 'A website usually takes 1 to 3 months, depending on size and review rounds. A digital invitation is much faster.',
-  q3: 'Will I be able to edit it myself?', a3: 'Yes. I hand it over ready for you to change texts, photos and products, and I show you how.',
+  q3: 'Will I be able to edit it myself?', a3: "Yes. I hand it over ready for you to change texts, photos and products, and I walk you through it. If something gets tricky, just message me.",
   q4: 'Who owns the site when it is done?', a4: 'You do. Domain, hosting and access are in your name. I only ask to show it in my portfolio.',
-  s6Label: '(07) Contact', cTitle: 'Shall we<em>?</em>',
-  cLead: 'Tell me your idea on WhatsApp. I usually reply the same day.',
+  s6Label: '(08) Contact', cTitle: 'Shall we<em>?</em>',
+  cLead: "Tell me your idea on WhatsApp, even if it's still rough. I usually reply the same day.",
   fIntro: 'Rather not use WhatsApp? Leave your details.',
   fName: 'Your name', fReply: 'Email or WhatsApp', fType: 'What do you need?',
   oWeb: 'A website', oShop: 'An online store', oInvite: 'A digital invitation', oOther: 'Something else',
