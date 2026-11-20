@@ -21,14 +21,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=18">
+  <link rel="stylesheet" href="./styles.css?v=26">
 </head>
 
 <body id="top">
 
 <header class="top">
   <div class="container top-inner">
-    <a class="brand" href="#top" aria-label="Máximo Argañarás, inicio">máximo<span class="brand-ast" aria-hidden="true">✳</span></a>
+    <a class="brand" href="#top" aria-label="Máximo Argañarás, inicio">máximo<span class="brand-ast" aria-hidden="true"><svg viewBox="2.5 2.5 19 19" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="butt"><path d="M12 2.5v19M2.5 12h19M5.3 5.3l13.4 13.4M18.7 5.3 5.3 18.7"/></svg></span></a>
     <nav class="nav" aria-label="Principal">
       <a href="#servicios" data-i18n="navServices">Servicios</a>
       <a href="#planes" data-i18n="navPlans">Planes</a>
@@ -51,7 +51,7 @@
       <svg viewBox="0 0 200 200" aria-hidden="true">
         <defs><path id="circ" d="M100,100 m-73,0 a73,73 0 1,1 146,0 a73,73 0 1,1 -146,0"/></defs>
         <circle cx="100" cy="100" r="98"/>
-        <text><textPath href="#circ" startOffset="0" textLength="458" data-i18n="sticker">HABLEMOS ✳ HABLEMOS ✳ HABLEMOS ✳ </textPath></text>
+        <text><textPath href="#circ" startOffset="0" textLength="458" data-i18n="sticker">HABLEMOS ✳︎ HABLEMOS ✳︎ HABLEMOS ✳︎ </textPath></text>
       </svg>
       <span class="sticker-arr">↗</span>
     </a>
@@ -335,7 +335,7 @@
 <!-- BANDA -->
 <a class="band js-wpp" data-wpp="general" href="#" target="_blank" rel="noopener" aria-label="Escribime por WhatsApp">
   <div class="band-track" aria-hidden="true">
-    <span data-i18n="band">¿Hablamos? ✳ Escribime por WhatsApp ✳</span><span data-i18n="band">¿Hablamos? ✳ Escribime por WhatsApp ✳</span><span data-i18n="band">¿Hablamos? ✳ Escribime por WhatsApp ✳</span><span data-i18n="band">¿Hablamos? ✳ Escribime por WhatsApp ✳</span>
+    <span data-i18n="band">¿Hablamos? ✳︎ Escribime por WhatsApp ✳︎</span><span data-i18n="band">¿Hablamos? ✳︎ Escribime por WhatsApp ✳︎</span><span data-i18n="band">¿Hablamos? ✳︎ Escribime por WhatsApp ✳︎</span><span data-i18n="band">¿Hablamos? ✳︎ Escribime por WhatsApp ✳︎</span>
   </div>
 </a>
 
@@ -439,7 +439,7 @@ var EN = {
   sv3t: 'Digital invitations', sv3p: 'Weddings, sweet fifteens and birthdays, with online RSVP',
   sv4t: 'Monthly partnership', sv4p: 'We measure and improve your site every month, as partners',
   sv5t: 'Newsletter', sv5p: 'For online stores: email campaigns that bring customers back',
-  sticker: "LET'S TALK ✳ LET'S TALK ✳ LET'S TALK ✳ ", band: "Let's talk ✳ Message me on WhatsApp ✳", oNews: 'A newsletter for my store',
+  sticker: "LET'S TALK ✳︎ LET'S TALK ✳︎ LET'S TALK ✳︎ ", band: "Let's talk ✳︎ Message me on WhatsApp ✳︎", oNews: 'A newsletter for my store',
   invLabel: '(03) Digital invitations',
   invTitle: 'Got an invitation I made? <em>Get your own.</em>',
   invLead: 'A web invitation for your wedding or celebration, ready to share on WhatsApp.',
@@ -539,7 +539,6 @@ var MSG = {
   var rotator = document.getElementById('rotator');
   var wordIndex = 0, rotTimer = null;
   function setWord(word, instant) {
-    var old = rotator.querySelector('.rot-word.is-in');
     var el = document.createElement('span');
     el.className = 'rot-word'; el.textContent = word;
     rotator.appendChild(el);
@@ -548,11 +547,22 @@ var MSG = {
       el.classList.add('is-in'); return;
     }
     requestAnimationFrame(function () { requestAnimationFrame(function () {
+      // saca TODAS las palabras anteriores, no solo una: así nunca quedan superpuestas
+      rotator.querySelectorAll('.rot-word').forEach(function (w) {
+        if (w === el || w.classList.contains('is-out')) return;
+        w.classList.remove('is-in'); w.classList.add('is-out');
+        setTimeout(function () { w.remove(); }, 700);
+      });
       el.classList.add('is-in');
-      if (old) { old.classList.remove('is-in'); old.classList.add('is-out'); setTimeout(function () { old.remove(); }, 700); }
     }); });
   }
+  // solo rota cuando el título se ve y la pestaña está activa
+  var heroVisible = true;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; }).observe(rotator);
+  }
   if (!reduce) rotTimer = setInterval(function () {
+    if (!heroVisible || document.hidden) return;
     wordIndex = (wordIndex + 1) % WORDS[lang].length;
     setWord(WORDS[lang][wordIndex]);
   }, 2600);

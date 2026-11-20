@@ -86,7 +86,8 @@ ul, ol { list-style: none; }
 .top.is-scrolled { border-bottom-color: var(--line); }
 .top-inner { display: flex; align-items: center; gap: 24px; height: 68px; }
 .brand { display: flex; align-items: baseline; font-weight: 600; font-size: 26px; letter-spacing: -.06em; }
-.brand-ast { color: var(--green); font-size: .7em; margin-left: 3px; display: inline-block; transition: transform .6s var(--ease); }
+.brand-ast { color: var(--green); display: inline-block; width: .51em; height: .51em; margin-left: .06em; transform-origin: 50% 50%; transition: transform .6s var(--ease); }
+.brand-ast svg { display: block; width: 100%; height: 100%; }
 .brand:hover .brand-ast { transform: rotate(90deg); }
 .brand small { font-family: var(--mono); font-weight: 400; font-size: 12px; letter-spacing: .02em; color: var(--mute); }
 .nav { display: flex; gap: 28px; margin-left: auto; font-size: 15px; }
