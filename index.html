@@ -24,11 +24,11 @@
   <link rel="stylesheet" href="./styles.css?v=18">
 </head>
 
-<body>
+<body id="top">
 
-<header class="top" id="top">
+<header class="top">
   <div class="container top-inner">
-    <a class="brand" href="#" aria-label="Máximo Argañarás, inicio">máximo<span class="brand-ast" aria-hidden="true">✳</span></a>
+    <a class="brand" href="#top" aria-label="Máximo Argañarás, inicio">máximo<span class="brand-ast" aria-hidden="true">✳</span></a>
     <nav class="nav" aria-label="Principal">
       <a href="#servicios" data-i18n="navServices">Servicios</a>
       <a href="#planes" data-i18n="navPlans">Planes</a>
@@ -248,9 +248,9 @@
       <a class="work-row" href="https://lindainvitaciones.com.ar/demo-campestre" target="_blank" rel="noopener" data-img="./Imagenes/web/p-invitacion.webp">
         <div class="w-thumb"><img src="./Imagenes/web/p-invitacion.webp" alt="" loading="lazy"></div>
         <span class="w-n">06</span>
-        <span class="w-name" data-i18n="pInvName">Invitación campestre</span>
-        <span class="w-desc" data-i18n="pInv">Invitación digital de casamiento: sobre que se abre, confirmación de asistencia y panel para los novios.</span>
-        <span class="w-tag">Linda Invitaciones</span>
+        <span class="w-name">Linda Invitaciones</span>
+        <span class="w-desc" data-i18n="pInv">Mi marca de invitaciones digitales. Mirá la demo campestre: sobre que se abre, confirmación de asistencia y panel para los novios.</span>
+        <span class="w-tag" data-i18n="tInvite">Invitación digital</span>
         <span class="w-arr">↗</span>
       </a>
       <a class="work-row" href="https://rinnovointeriores.com.ar" target="_blank" rel="noopener" data-img="./Imagenes/web/p-rinnovo.webp">
@@ -456,7 +456,7 @@ var EN = {
   pBiozen: 'Pilates studio in Canning: a site built to book the first class.',
   pBerardi: 'Real estate agency with a property search and listings with video.',
   pCeoti: 'Orthopedics and traumatology center. Built with the Valor Digital agency.',
-  pInvName: 'Countryside invitation', pInv: 'Digital wedding invitation: an opening envelope, RSVP and a dashboard for the couple.', tInvite: 'Invitation',
+  pInv: 'My digital invitation brand. See the countryside demo: an opening envelope, RSVP and a dashboard for the couple.', tInvite: 'Digital invitation',
   pRinnovo: 'Architecture studio and interior design shop.',
   tRealEstate: 'Real estate', tHealth: 'Health', tArch: 'Architecture', tCeotiCover: 'Health · with Valor Digital',
   abLabel: '(05) About', abTitle: 'There is a person on the other side, <em>not an agency.</em>',
@@ -576,7 +576,7 @@ var MSG = {
   updateClock(); setInterval(updateClock, 15000);
 
   /* ---- Header con borde al scrollear ---- */
-  var top = document.getElementById('top');
+  var top = document.querySelector('header.top');
   var fab = document.getElementById('wpp-fab');
   var contact = document.getElementById('contacto');
   function onScroll() {
