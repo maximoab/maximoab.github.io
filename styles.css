@@ -488,4 +488,6 @@ ul, ol { list-style: none; }
 .wpp-fab { background: var(--ink); }
 .about-photo img { object-position: 50% 40%; }
 @media (max-width: 820px) { .about-photo { aspect-ratio: 4 / 5; max-width: 320px; } }
-.wordmark span { color: var(--accent); }
+/* asterisco del pie dibujado: copia del ✳ de Safari en Mac (fino, puntas rectas), igual en todos los dispositivos */
+.wordmark-ast { color: var(--accent); display: inline-block; width: .559em; height: .559em; margin: -.5em -.031em 0 .026em; vertical-align: -.013em; }
+.wordmark-ast svg { display: block; width: 100%; height: 100%; overflow: visible; }
